@@ -13,12 +13,7 @@ int main(int ac, char **av)
 			MyPhoneBook.addContact();
 		else if (command == "SEARCH"){
 			MyPhoneBook.showAllsummaries();
-			while (true){
-				int index = 0;
-				std::cout << "Enter the index of the contact to display: ";
-				std::cin >> index;
-				std::cin.ignore(); // clears the newline left in the input buffer so the next getline() doesn’t break to clarify more later
-			}
+			MyPhoneBook.searchContact();
 		}
 		else if (command == "EXIT")
 			break;

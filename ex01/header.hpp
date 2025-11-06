@@ -6,7 +6,7 @@
 /*   By: molamham <molamham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 12:17:05 by molamham          #+#    #+#             */
-/*   Updated: 2025/11/06 11:31:32 by molamham         ###   ########.fr       */
+/*   Updated: 2025/11/06 21:35:35 by molamham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ class PhoneBook
 		PhoneBook();
 		void addContact();
 		void showAllsummaries();
-		// void searchContact();
+		void searchContact();
 };
 
 #endif

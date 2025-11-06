@@ -65,3 +65,47 @@ void PhoneBook::showAllsummaries(){
 	}
 };
 
+void PhoneBook::searchContact(){
+	int index = 0;
+	std::cout << "Enter the index of the contact to display: ";
+	std::cin >> index;
+	std::cin.ignore(); // clears the newline left in the input buffer so the next getline() doesn’t break to clarify more later
+
+	if (index < 1 || index > totalContacts) {
+		std::cout << "Invalid index. Please try again." << std::endl;
+		return;
+	}
+	list[index - 1].showDetails(); // Adjust for 0-based index
+}
+
+void PhoneBook::searchContact(){
+	std::string input;
+	std::cout << "Enter the index of the contact to display: ";
+	if (!std::getline(std::cin, input)) { // handle EOF or stream error
+		if (std::cin.eof())
+			std::cout << "Input closed. Returning to menu." << std::endl;
+		else
+			std::cout << "Input error." << std::endl;
+		return;
+	}
+
+	if (input.empty()) {
+		std::cout << "No index entered. Please try again." << std::endl;
+		return;
+	}
+
+	int idx = 0;
+	try {
+		idx = std::stoi(input);
+	} catch (...) {
+		std::cout << "Invalid index. Please enter a number." << std::endl;
+		return;
+	}
+
+	if (idx < 1 || idx > totalContacts) {
+		std::cout << "Invalid index. Please try again." << std::endl;
+		return;
+	}
+
+	list[idx - 1].showDetails(); // Adjust for 0-based index
+}
