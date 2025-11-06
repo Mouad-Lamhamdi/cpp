@@ -1,40 +1,28 @@
-#include <iostream>
-
-class Contact {
-	private:
-		std::string Firstname;
-		std::string Lastname;
-		std::string Phonenumber;
-		std::string Darkestsecret;
-	public:
-		void setinfo(){
-
-			std::cout << "Enter first name : ";
-			std::getline(std::cin, Firstname);
-
-			std::cout << "Enter last name : ";
-			std::getline(std::cin, Lastname);
-
-			std::cout << "Enter phone number : ";
-			std::getline(std::cin, Phonenumber);
-
-			std::cout << "Enter darkest secret : ";
-			std::getline(std::cin, Darkestsecret);
-		}
-		void showinfo(){
-
-			std::cout << Firstname << std::endl;
-			std::cout << Lastname << std::endl;
-			std::cout << Phonenumber << std::endl;
-			std::cout << Darkestsecret << std::endl;
-		}
-};
+#include "header.hpp"
 
 int main(int ac, char **av)
 {
-	Contact c;
+	PhoneBook MyPhoneBook;
+	std::string command;
 
-	c.setinfo();
-	c.showinfo();
-	return 0;
+	std::cout << "Welcome to your PhoneBook!";
+	while (true){
+		std::cout << "Enter a command (ADD, SEARCH or EXIT) : ";
+		std::getline(std::cin, command);
+		if (command == "ADD")
+			MyPhoneBook.addContact();
+		else if (command == "SEARCH"){
+			MyPhoneBook.showAllsummaries();
+			while (true){
+				int index = 0;
+				std::cout << "Enter the index of the contact to display: ";
+				std::cin >> index;
+				std::cin.ignore(); // clears the newline left in the input buffer so the next getline() doesn’t break to clarify more later
+			}
+		}
+		else if (command == "EXIT")
+			break;
+		else
+			std::cout << "Unknown command. Try again." << std::endl;
+	}
 }
