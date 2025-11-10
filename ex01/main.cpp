@@ -1,6 +1,6 @@
 #include "header.hpp"
 
-int main(int ac, char **av)
+int main()
 {
 	PhoneBook MyPhoneBook;
 	std::string command;
