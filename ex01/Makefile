@@ -1,6 +1,6 @@
-CC = g++
+CC = c++
 
-CXXFLAGS = -Wall -Wextra -std=c++11
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = main.cpp helpers.cpp utils.cpp
 

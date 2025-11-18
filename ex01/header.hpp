@@ -6,7 +6,7 @@
 /*   By: molamham <molamham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 12:17:05 by molamham          #+#    #+#             */
-/*   Updated: 2025/11/06 21:35:35 by molamham         ###   ########.fr       */
+/*   Updated: 2025/11/11 13:40:37 by molamham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include <iostream>
 # include <iomanip>
 
-class Contact
+class Contact // still needs (Constructor + Destructor) .
 {
 	private:
 		std ::string firstname;
@@ -25,7 +25,7 @@ class Contact
 		std ::string darkestsecret;
 
 	public:
-		void setInfo();
+		void setInfo();//setter
 		void showSummary();
 		void showDetails();
 
