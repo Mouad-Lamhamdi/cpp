@@ -1,6 +1,6 @@
 CC = g++
 
-CXXFLAGS = -Wall -Wextra -std=c++11
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = megaphone.cpp
 

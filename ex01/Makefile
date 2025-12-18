@@ -1,19 +1,23 @@
 CC = c++
-
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+NAME = PhoneBook
 
-SRCS = main.cpp helpers.cpp utils.cpp
-
+SRCS = main.cpp Contact.cpp PhoneBook.cpp
 OBJS = $(SRCS:.cpp=.o)
 
-all: $(OBJS)
-	$(CC) $(CXXFLAGS) -o my_program $(OBJS)
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	$(CC) $(CXXFLAGS) $(OBJS) -o $(NAME)
+
+%.o: %.cpp
+	$(CC) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS) my_program
+	rm -f $(OBJS)
 
 fclean: clean
-	rm -f my_program
+	rm -f $(NAME)
 
 re: fclean all
 
